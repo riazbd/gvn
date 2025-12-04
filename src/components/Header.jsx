@@ -1,28 +1,31 @@
-
 import React, { useState, useEffect, useContext } from 'react';
 import { AppBar, Toolbar, Box, Button, IconButton, Drawer, List, ListItem, ListItemButton, ListItemText } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import { Link as ScrollLink } from 'react-scroll';
+import { Link, useNavigate } from 'react-router-dom';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { ThemeContext } from '../context/ThemeContext.js';
+import { useAuth } from '../context/AuthContext.jsx';
 
 const navItems = [
-  { label: 'Home', to: 'hero' },
-  { label: 'About', to: 'about' },
-  { label: 'Services', to: 'services' },
-  { label: 'Gallery', to: 'gallery' },
-  { label: 'Contact', to: 'contact' },
+  { label: 'Home', to: 'hero', isScrollLink: true },
+  { label: 'About', to: 'about', isScrollLink: true },
+  { label: 'Services', to: 'services', isScrollLink: true },
+  { label: 'Gallery', to: 'gallery', isScrollLink: true },
+  { label: 'Contact', to: 'contact', isScrollLink: true },
 ];
 
 const Header = () => {
   const muiTheme = useTheme();
   const { theme: themeMode, toggleTheme } = useContext(ThemeContext);
+  const { isAuthenticated, logout } = useAuth();
   const isMobile = useMediaQuery(muiTheme.breakpoints.down('sm'));
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,9 +41,16 @@ const Header = () => {
     setDrawerOpen(!drawerOpen);
   };
 
+  const handleLogout = async () => {
+    await logout();
+    navigate('/');
+  };
+
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <img src="/logo.svg" alt="GVN Logo" style={{ margin: '1rem 0', height: '30px' }} />
+      <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+        <img src="/logo.svg" alt="GVN Logo" style={{ margin: '1rem 0', height: '30px' }} />
+      </Link>
       <List>
         {navItems.map((item) => (
           <ListItem key={item.label} disablePadding>
@@ -51,6 +61,30 @@ const Header = () => {
             </ScrollLink>
           </ListItem>
         ))}
+        {!isAuthenticated ? (
+          <ListItem key="Login" disablePadding>
+            <Link to="/login" style={{ textDecoration: 'none', width: '100%' }}>
+              <ListItemButton sx={{ textAlign: 'center' }}>
+                <ListItemText primary="Login" />
+              </ListItemButton>
+            </Link>
+          </ListItem>
+        ) : (
+          <>
+            <ListItem key="Dashboard" disablePadding>
+              <Link to="/dashboard" style={{ textDecoration: 'none', width: '100%' }}>
+                <ListItemButton sx={{ textAlign: 'center' }}>
+                  <ListItemText primary="Dashboard" />
+                </ListItemButton>
+              </Link>
+            </ListItem>
+            <ListItem key="Logout" disablePadding>
+              <ListItemButton sx={{ textAlign: 'center' }} onClick={handleLogout}>
+                <ListItemText primary="Logout" />
+              </ListItemButton>
+            </ListItem>
+          </>
+        )}
       </List>
     </Box>
   );
@@ -82,9 +116,9 @@ const Header = () => {
         }}
       >
         <Toolbar sx={{ justifyContent: 'space-between' }}>
-          <ScrollLink to="hero" spy={true} smooth={true} offset={-70} duration={500} style={{cursor: 'pointer'}}>
+          <Link to="/" style={{cursor: 'pointer'}}>
             <img src="/logo.svg" alt="GVN Logo" style={{ height: scrolled ? '30px' : '35px', transition: 'height 0.3s ease', display: 'block' }} />
-          </ScrollLink>
+          </Link>
           
           {isMobile ? (
             <Box>
@@ -102,6 +136,18 @@ const Header = () => {
                   <Button sx={{ color: 'text.primary', fontWeight: 500, mx: 1.5, position: 'relative' }}>{item.label}</Button>
                 </ScrollLink>
               ))}
+              {!isAuthenticated ? (
+                <Link to="/login" style={{ textDecoration: 'none' }}>
+                  <Button sx={{ color: 'text.primary', fontWeight: 500, mx: 1.5 }}>Login</Button>
+                </Link>
+              ) : (
+                <>
+                  <Link to="/dashboard" style={{ textDecoration: 'none' }}>
+                    <Button sx={{ color: 'text.primary', fontWeight: 500, mx: 1.5 }}>Dashboard</Button>
+                  </Link>
+                  <Button onClick={handleLogout} sx={{ color: 'text.primary', fontWeight: 500, mx: 1.5 }}>Logout</Button>
+                </>
+              )}
               <IconButton onClick={toggleTheme} color="inherit" sx={{ ml: 1 }}>
                 {themeMode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
               </IconButton>

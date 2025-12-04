@@ -1,26 +1,11 @@
-# CLAUDE.md
+# Claude.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file is a placeholder for information specific to the Claude AI assistant.
 
-## Architecture
-Vite + React 19 single-page application (frontend-only). Entry: `src/main.jsx` renders `App.jsx` to `#root` in `index.html`.
+When using Claude to interact with this repository, consider adding details here about:
 
-Key structure:
-- `src/components/`: Section components (Header, Hero, About, Services, MissionVision, Gallery, Contact, Footer).
-- `src/components/3D/`: Three.js scenes (Scene3D, AnimatedBlob) used in Hero.
-- `src/context/ThemeContext.jsx`: Theme management.
-- `src/theme/theme.js`: Theme definitions.
-- Styling: MUI (@mui/material), Emotion.
-- Animations: Framer Motion, React Spring (@react-spring/three).
-- 3D: @react-three/fiber, @react-three/drei.
-- Other: Swiper (sliders), react-scroll.
+*   **Project context unique to Claude's interactions:** For instance, if Claude has specific instructions or preferences for how it should handle certain files or tasks.
+*   **Claude's operational guidelines for this project:** Any specific commands, conventions, or limitations that Claude should adhere to when working within this codebase.
+*   **Previous interactions or known issues:** A log of significant past discussions or issues that Claude might need to be aware of.
 
-Data flow: App.jsx composes sections; theme via Context; 3D canvas in Hero.
-
-## Development Commands
-- `npm run dev`: Start Vite dev server.
-- `npm run build`: Build for production.
-- `npm run lint`: Run ESLint.
-- `npm run preview`: Preview production build.
-
-No tests configured.
+This helps ensure consistent and effective collaboration with Claude.

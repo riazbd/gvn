@@ -1,125 +1,69 @@
-About Us
-GVN Consortium (Global Visa Network) is a trusted EU work visa consultancy based in Dhaka, Bangladesh. Since 2019,
-we have been helping skilled and semi-skilled professionals secure legitimate employment opportunities in Serbia and
- Slovenia—two of Europe’s most rapidly growing labor markets.
-With over 350+ successful EU work visas processed, we have established ourselves as a reliable partner for
-individuals looking to build a better career abroad. Our team follows a transparent, ethical, and
-documentation-accurate approach to ensure that every client receives professional guidance and a smooth visa
-experience.
-From initial assessment to employer selection, documentation support, and final visa submission, we provide a fully
-structured pathway for applicants who aspire to work and grow in Europe with confidence.
-At GVN Consortium, your journey begins with trust—powered by real opportunities, authentic processing, and a
-commitment to your future.
+This file (`WEBSITE.txt`) serves as a comprehensive reference for the various components, sections, and functionalities present on the website, along with any specific notes or instructions relevant to its structure or content.
 
-Mission
-To provide transparent, ethical, and reliable EU work visa solutions that help Bangladeshi professionals access
-genuine employment opportunities in Serbia and Slovenia, supported by fast processing, accurate documentation, and
-premium client service.
+# Website Structure
 
-Vision
-To become Bangladesh’s most trusted and professional EU visa consultancy by delivering high-quality services,
-ensuring client confidence, and creating a seamless bridge between skilled workers and European employers.
+The website is a single-page application built using React and Vite, utilizing Material-UI and Tailwind CSS for styling. It is organized into several distinct sections, each managed by a dedicated React component.
 
-Privacy Policy
-Last Updated 2025
-GVN Consortium (“we”, “our”, “us”) is committed to protecting your personal information and maintaining full
-transparency in how your data is collected, stored, and used. By using our website and services, you agree to the
-practices described in this Privacy Policy.
+## Sections and Components:
 
-1. Information We Collect
-We may collect the following personal information when you interact with our website or services
-Full Name
-Phone Number
-Email Address
-Passport Copy  Passport Information
-CV  Resume
-Employment History
-Country Preference (Serbia or Slovenia)
-Any documents required for visa assessment or employer verification
+1.  **Header (`Header.jsx`):**
+    *   **Purpose:** Global navigation bar.
+    *   **Features:** Responsive design (hamburger menu on mobile), smooth scrolling links to other sections, theme toggle (light/dark mode).
+    *   **Styling:** Material-UI `AppBar`, `Toolbar`, `Drawer`.
+    *   **Data:** `navItems` array defines navigation links.
 
-2. How We Use Your Information
-Your data is used for the following purposes
-To assess eligibility for EU work visa programs
-To connect you with verified employers in Serbia or Slovenia
-To prepare and process visa applications
-To communicate updates, notifications, or requirements
-To send promotional or informational emails (with your consent)
-To improve our service quality and user experience
+2.  **Hero (`Hero.jsx`):**
+    *   **Purpose:** Main introductory section.
+    *   **Features:** Typically contains a prominent title, call-to-action, and possibly a background image or video.
+    *   **Styling:** Custom (Tailwind CSS and Material-UI elements).
 
-3. Data Sharing
-We do not sell or misuse any client information.
-We may share your data only with
-Verified EU employers
-Licensed agents or partners directly involved in the visa process
-Government or immigration authorities (when legally required)
-All shared data is limited to what is needed for processing your application.
+3.  **About (`About.jsx`):**
+    *   **Purpose:** Provides information about the GVN Consortium.
+    *   **Features:** Displays a brief company overview, mission statement, and key achievements (e.g., "350+ Successful EU Work Visas Processed").
+    *   **Styling:** Material-UI `Container`, `Grid`, `Typography`, `Box`, `Paper`. Uses `framer-motion` for scroll-triggered animations.
 
-4. Data Security
-We use industry-standard security measures to protect your information
-SSL-secured website
-Encrypted storage systems
-Restricted internal access to sensitive files
-Secure document handling practices
-While we take strong precautions, no digital system is 100% risk-free. However, we continuously upgrade our systems
-to maintain the highest level of data protection.
+4.  **Mission & Vision (`MissionVision.jsx`):**
+    *   **Purpose:** Details the company's core mission and long-term vision.
+    *   **Features:** Two distinct cards, one for mission and one for vision, with corresponding icons.
+    *   **Styling:** Material-UI `Container`, `Grid`, `Typography`, `Box`, `Paper`. Uses `framer-motion` for scroll-triggered animations.
 
-5. Marketing Communication
-You may receive
-Email updates
-Promotional messages
-Visa-related announcements
-You can unsubscribe from marketing communications at any time.
+5.  **Services (`Services.jsx`):**
+    *   **Purpose:** Showcases the range of services offered.
+    *   **Features:** Interactive carousel using `Swiper` (Swiper.js) to display individual service cards. Each card includes an icon, title, and description. Background image changes with active slide.
+    *   **Styling:** Material-UI `Container`, `Typography`, `Box`, `Paper`. Integrates `Swiper` for carousel functionality.
 
-6. Your Rights
-You have the right to
-Request a copy of your personal data
-Ask for corrections to inaccurate information
-Request deletion of your data (unless required for ongoing visa processing)
-For any privacy-related requests, you can contact us directly.
+6.  **Gallery (`Gallery.jsx`):**
+    *   **Purpose:** Presents a visual gallery related to the company's work, reach, or values.
+    *   **Features:** 3D-like interactive image carousel with navigation arrows and autoplay.
+    *   **Styling:** Material-UI `Container`, `Typography`, `Box`, `IconButton`. Uses `framer-motion` for animations and custom styling for the 3D effect.
 
-7. Policy Updates
-We may modify this Privacy Policy periodically. Any changes will be updated on this page with a revised “Last
-Updated” date.
+7.  **Contact (`Contact.jsx`):**
+    *   **Purpose:** Provides means for visitors to contact the company.
+    *   **Features:** Contact information (address, phone, email) and a contact form for sending messages.
+    *   **Styling:** Material-UI `Container`, `Grid`, `Typography`, `Box`, `Paper`, `TextField`, `Button`. Uses `framer-motion` for animations.
 
-Our Services
-EU Work Permit Visa (Serbia & Slovenia)
-We provide complete support for authentic EU work permit visas in Serbia and Slovenia. From eligibility checks to
-employer matching, documentation, and embassy submission — we guide you through every stage with transparency and
-accuracy.
+8.  **Footer (`Footer.jsx`):**
+    *   **Purpose:** Displays global footer information.
+    *   **Features:** Typically includes copyright, social media links, and other relevant static information.
+    *   **Styling:** Material-UI `Box`, `Typography`.
 
-Skilled Migration Support
-Our skilled migration service helps professionals move abroad through genuine opportunities that match their
-qualifications and experience. We assist with profile evaluation, document preparation, job alignment, and migration
- pathway guidance.
+9.  **Loading (`Loading.jsx`):**
+    *   **Purpose:** Displays a loading animation or screen while the application initializes.
+    *   **Features:** Controlled by application state (`isLoading`).
 
-Visit Visa Assistance
-Whether for tourism, business trips, or short-term travel, we help you prepare and process your visit visa
-applications with properly aligned documents and professional guidance to increase your approval chances.
+## Global Styling & Theming:
 
-Employer Matching & Job Placement
-We connect applicants with verified employers in Europe, ensuring genuine job opportunities across multiple sectors
-such as manufacturing, logistics, hospitality, agriculture, and construction.
+*   **`index.css`:** Contains global CSS styles, including some Tailwind CSS directives.
+*   **`theme/theme.js`:** Defines Material-UI `lightTheme` and `darkTheme` objects, specifying palette colors, typography, and component overrides (e.g., `MuiButton`, `MuiPaper`, `MuiAppBar`).
+*   **`context/ThemeContext.jsx`:** Provides the `CustomThemeProvider` component, which manages the current theme state and allows for theme toggling across the application.
 
-Document Preparation & Verification
-We prepare, verify, and organize all necessary documentation — including passports, CVs, employment letters, and
-visa forms — ensuring compliance with embassy and employer requirements.
+## Assets:
 
-Visa Application Submission
-Our experienced consultants manage the full visa submission process, embassy scheduling, and file preparation to
-prevent delays, errors, or rejections.
+*   **`public/`:** Contains static assets such as `logo.svg` and `world-map.svg`.
+*   Image placeholders (`picsum.photos`) are used in `Services.jsx` and `Gallery.jsx`.
 
-Pre-Departure & Post-Visa Guidance
-We provide guidance on travel, accommodation, workplace expectations, cultural orientation, and essential do’s &
-don’ts to ensure a smooth transition to your new life abroad.
+## Notes:
 
-
-8. Contact Information
-GVN Consortium – Global Visa Network
-SS Tower, House-36, Block-A, Aftabnagar Main Road
-(Near East West University)
-Aftabnagar, Badda, Dhaka-1212, Bangladesh
-
-, I need an awesome businees website - No Typescript - No Cyberpunk design - Must be an awesome UI - with great UX -
- Very Professional - Gorgeous - Modern. Make it perfect - All the industry best practices - Super responsive -
-Absolute banger - Eye soothing - Smooth - Client will jump with excitement.
-Don’t use plain html, css. Use the best frontend framework (Not angular or vue).
+*   The project uses `react-scroll` for smooth navigation between sections.
+*   `framer-motion` is extensively used for scroll-triggered and interactive animations, adding dynamic visual effects throughout the site.
+*   `Swiper` is integrated for the services carousel, offering a modern and responsive way to display multiple items.

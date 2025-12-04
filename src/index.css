@@ -16,3 +16,16 @@ body {
   overflow-x: hidden;
   background-color: #f0f2f5; /* Light gray for a trustable look */
 }
+
+/* Keyframes for animated gradient background */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

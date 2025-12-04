@@ -1,0 +1,1195 @@
+{
+	"info": {
+		"_postman_id": "3663aac5-ccf9-42ea-8b42-6b7ae4251015",
+		"name": "Gvn live",
+		"description": "Gvn Api complete documentation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14391373"
+	},
+	"item": [
+		{
+			"name": "https://gvnconsortium.com/api/client/username",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://gvnconsortium.com/api/client/username?username=Z8K8ZS1ZJQ",
+					"protocol": "https",
+					"host": [
+						"gvnconsortium",
+						"com"
+					],
+					"path": [
+						"api",
+						"client",
+						"username"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "Z8K8ZS1ZJQ"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "https://gvnconsortium.com/api/client/username",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://gvnconsortium.com/api/client/username?username=Z8K8ZS1ZJQ",
+							"protocol": "https",
+							"host": [
+								"gvnconsortium",
+								"com"
+							],
+							"path": [
+								"api",
+								"client",
+								"username"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "Z8K8ZS1ZJQ"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 01 Dec 2025 18:22:50 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "488"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.27"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "platform",
+							"value": "hostinger"
+						},
+						{
+							"key": "panel",
+							"value": "hpanel"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "upgrade-insecure-requests"
+						},
+						{
+							"key": "Server",
+							"value": "hcdn"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						},
+						{
+							"key": "x-hcdn-request-id",
+							"value": "ef9bdfe4b454774d58222026fd90174d-kul-edge1"
+						},
+						{
+							"key": "x-hcdn-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "x-hcdn-upstream-rt",
+							"value": "0.301"
+						},
+						{
+							"key": "Accept-Ranges",
+							"value": "bytes"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"client\": {\n        \"id\": 3,\n        \"name\": \"Md Monjurul Islam\",\n        \"phone\": \"01861010103\",\n        \"email\": \"mishatil@gmail.com\",\n        \"passport\": \"123456\",\n        \"address\": \"83 Arambagh, Motijheel\",\n        \"country_id\": 1,\n        \"is_skilled\": 1,\n        \"skill\": \"Plumber\",\n        \"image\": \"upload/client/client-1764271400-989768323.jpg\",\n        \"username\": \"Z8K8ZS1ZJQ\",\n        \"password\": \"$2y$12$Y.v6iL56O1a8a48FZ.hkD.SO0XynhkJYWNYfWB6bQ2fcam69BRfte\",\n        \"slug\": \"md-monjurul-islam-1764271400T9TWBHrraGGqFrGzcQay\",\n        \"is_active\": 1,\n        \"status\": \"Pending\",\n        \"created_at\": \"2025-11-27T19:23:20.000000Z\",\n        \"updated_at\": \"2025-12-01T18:22:07.000000Z\"\n    },\n    \"message\": \"Already Set Password\",\n    \"status\": 409,\n    \"token\": \"20|DMl4oTW5GGQxs3kTMKCjOof1OStNuGi0NhYe0VUY9f83eb98\"\n}"
+				}
+			]
+		},
+		{
+			"name": "https://gvnconsortium.com/api/client/set-password",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "4|tcxf91Ec3TZz6L4q0giZcJV4191RMUR34jFi1Yyxd5e304f6",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"Z8K8ZS1ZJQ\",\r\n    \"password\":\"123456\",\r\n    \"password_confirmation\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gvnconsortium.com/api/client/set-password",
+					"protocol": "https",
+					"host": [
+						"gvnconsortium",
+						"com"
+					],
+					"path": [
+						"api",
+						"client",
+						"set-password"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "Z8K8ZS1ZJQ",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"disabled": true
+						},
+						{
+							"key": "password_confirmation",
+							"value": "123456",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "https://gvnconsortium.com/api/client/set-password",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"Z8K8ZS1ZJQ\",\r\n    \"password\":\"123456\",\r\n    \"password_confirmation\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://gvnconsortium.com/api/client/set-password",
+							"protocol": "https",
+							"host": [
+								"gvnconsortium",
+								"com"
+							],
+							"path": [
+								"api",
+								"client",
+								"set-password"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "Z8K8ZS1ZJQ",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"disabled": true
+								},
+								{
+									"key": "password_confirmation",
+									"value": "123456",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 01 Dec 2025 18:22:56 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "493"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.27"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "platform",
+							"value": "hostinger"
+						},
+						{
+							"key": "panel",
+							"value": "hpanel"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "upgrade-insecure-requests"
+						},
+						{
+							"key": "Server",
+							"value": "hcdn"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						},
+						{
+							"key": "x-hcdn-request-id",
+							"value": "e6a02788efee0b8e025ddf89c8a5d08a-kul-edge1"
+						},
+						{
+							"key": "x-hcdn-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "x-hcdn-upstream-rt",
+							"value": "0.519"
+						},
+						{
+							"key": "Accept-Ranges",
+							"value": "bytes"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"client\": {\n        \"id\": 3,\n        \"name\": \"Md Monjurul Islam\",\n        \"phone\": \"01861010103\",\n        \"email\": \"mishatil@gmail.com\",\n        \"passport\": \"123456\",\n        \"address\": \"83 Arambagh, Motijheel\",\n        \"country_id\": 1,\n        \"is_skilled\": 1,\n        \"skill\": \"Plumber\",\n        \"image\": \"upload/client/client-1764271400-989768323.jpg\",\n        \"username\": \"Z8K8ZS1ZJQ\",\n        \"password\": \"$2y$12$NrwgGb5CPP/deRMtmUUpIO19lS2hFA1Tuopfdzu365UQPBU6icD52\",\n        \"slug\": \"md-monjurul-islam-1764271400T9TWBHrraGGqFrGzcQay\",\n        \"is_active\": 1,\n        \"status\": \"Pending\",\n        \"created_at\": \"2025-11-27T19:23:20.000000Z\",\n        \"updated_at\": \"2025-12-01T18:22:56.000000Z\"\n    },\n    \"message\": \"Password Set Successfully!\",\n    \"status\": 200,\n    \"token\": \"21|UL2bBs1dJKXDlV32gB4j7Wk0zkFkjjumPLqWjBwEe2b9d6fa\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"mishatil@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gvnconsortium.com/api/client/login",
+					"protocol": "https",
+					"host": [
+						"gvnconsortium",
+						"com"
+					],
+					"path": [
+						"api",
+						"client",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://gvnconsortium.com/api/client/login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"mishatil@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://gvnconsortium.com/api/client/login",
+							"protocol": "https",
+							"host": [
+								"gvnconsortium",
+								"com"
+							],
+							"path": [
+								"api",
+								"client",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 01 Dec 2025 18:23:04 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "486"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.27"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "platform",
+							"value": "hostinger"
+						},
+						{
+							"key": "panel",
+							"value": "hpanel"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "upgrade-insecure-requests"
+						},
+						{
+							"key": "Server",
+							"value": "hcdn"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						},
+						{
+							"key": "x-hcdn-request-id",
+							"value": "96bae7df4d5e525e45faeae9c6357c6c-kul-edge1"
+						},
+						{
+							"key": "x-hcdn-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "x-hcdn-upstream-rt",
+							"value": "0.694"
+						},
+						{
+							"key": "Accept-Ranges",
+							"value": "bytes"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"client\": {\n        \"id\": 3,\n        \"name\": \"Md Monjurul Islam\",\n        \"phone\": \"01861010103\",\n        \"email\": \"mishatil@gmail.com\",\n        \"passport\": \"123456\",\n        \"address\": \"83 Arambagh, Motijheel\",\n        \"country_id\": 1,\n        \"is_skilled\": 1,\n        \"skill\": \"Plumber\",\n        \"image\": \"upload/client/client-1764271400-989768323.jpg\",\n        \"username\": \"Z8K8ZS1ZJQ\",\n        \"password\": \"$2y$12$NrwgGb5CPP/deRMtmUUpIO19lS2hFA1Tuopfdzu365UQPBU6icD52\",\n        \"slug\": \"md-monjurul-islam-1764271400T9TWBHrraGGqFrGzcQay\",\n        \"is_active\": 1,\n        \"status\": \"Pending\",\n        \"created_at\": \"2025-11-27T19:23:20.000000Z\",\n        \"updated_at\": \"2025-12-01T18:22:56.000000Z\"\n    },\n    \"token\": \"22|bNFm0O2M0DP94j7i6SFqCzuFhL5o7wARqtZMl6qk91a73088\",\n    \"status\": 200,\n    \"message\": \"Login successful\"\n}"
+				},
+				{
+					"name": "https://gvnconsortium.com/api/client/login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"mishatil@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://gvnconsortium.com/api/client/login",
+							"protocol": "https",
+							"host": [
+								"gvnconsortium",
+								"com"
+							],
+							"path": [
+								"api",
+								"client",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 01 Dec 2025 18:46:10 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "485"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.27"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "platform",
+							"value": "hostinger"
+						},
+						{
+							"key": "panel",
+							"value": "hpanel"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "upgrade-insecure-requests"
+						},
+						{
+							"key": "Server",
+							"value": "hcdn"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						},
+						{
+							"key": "x-hcdn-request-id",
+							"value": "6b2959106c345c0efe1b3c86dc669a76-kul-edge1"
+						},
+						{
+							"key": "x-hcdn-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "x-hcdn-upstream-rt",
+							"value": "3.006"
+						},
+						{
+							"key": "Accept-Ranges",
+							"value": "bytes"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"client\": {\n        \"id\": 3,\n        \"name\": \"Md Monjurul Islam\",\n        \"phone\": \"01861010103\",\n        \"email\": \"mishatil@gmail.com\",\n        \"passport\": \"123456\",\n        \"address\": \"83 Arambagh, Motijheel\",\n        \"country_id\": 1,\n        \"is_skilled\": 1,\n        \"skill\": \"Plumber\",\n        \"image\": \"upload/client/client-1764271400-989768323.jpg\",\n        \"username\": \"Z8K8ZS1ZJQ\",\n        \"password\": \"$2y$12$NrwgGb5CPP/deRMtmUUpIO19lS2hFA1Tuopfdzu365UQPBU6icD52\",\n        \"slug\": \"md-monjurul-islam-1764271400T9TWBHrraGGqFrGzcQay\",\n        \"is_active\": 1,\n        \"status\": \"Pending\",\n        \"created_at\": \"2025-11-27T19:23:20.000000Z\",\n        \"updated_at\": \"2025-12-01T18:22:56.000000Z\"\n    },\n    \"token\": \"23|oDuU7l7uv6htfqDhtGXGz9l6xxixXTm2BwSyyZKceba12210\",\n    \"status\": 200,\n    \"message\": \"Login successful\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "23|oDuU7l7uv6htfqDhtGXGz9l6xxixXTm2BwSyyZKceba12210",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gvnconsortium.com/api/client/logout",
+					"protocol": "https",
+					"host": [
+						"gvnconsortium",
+						"com"
+					],
+					"path": [
+						"api",
+						"client",
+						"logout"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://gvnconsortium.com/api/client/login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"mishatil@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://gvnconsortium.com/api/client/login",
+							"protocol": "https",
+							"host": [
+								"gvnconsortium",
+								"com"
+							],
+							"path": [
+								"api",
+								"client",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 01 Dec 2025 18:23:04 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "486"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.27"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "platform",
+							"value": "hostinger"
+						},
+						{
+							"key": "panel",
+							"value": "hpanel"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "upgrade-insecure-requests"
+						},
+						{
+							"key": "Server",
+							"value": "hcdn"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						},
+						{
+							"key": "x-hcdn-request-id",
+							"value": "96bae7df4d5e525e45faeae9c6357c6c-kul-edge1"
+						},
+						{
+							"key": "x-hcdn-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "x-hcdn-upstream-rt",
+							"value": "0.694"
+						},
+						{
+							"key": "Accept-Ranges",
+							"value": "bytes"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"client\": {\n        \"id\": 3,\n        \"name\": \"Md Monjurul Islam\",\n        \"phone\": \"01861010103\",\n        \"email\": \"mishatil@gmail.com\",\n        \"passport\": \"123456\",\n        \"address\": \"83 Arambagh, Motijheel\",\n        \"country_id\": 1,\n        \"is_skilled\": 1,\n        \"skill\": \"Plumber\",\n        \"image\": \"upload/client/client-1764271400-989768323.jpg\",\n        \"username\": \"Z8K8ZS1ZJQ\",\n        \"password\": \"$2y$12$NrwgGb5CPP/deRMtmUUpIO19lS2hFA1Tuopfdzu365UQPBU6icD52\",\n        \"slug\": \"md-monjurul-islam-1764271400T9TWBHrraGGqFrGzcQay\",\n        \"is_active\": 1,\n        \"status\": \"Pending\",\n        \"created_at\": \"2025-11-27T19:23:20.000000Z\",\n        \"updated_at\": \"2025-12-01T18:22:56.000000Z\"\n    },\n    \"token\": \"22|bNFm0O2M0DP94j7i6SFqCzuFhL5o7wARqtZMl6qk91a73088\",\n    \"status\": 200,\n    \"message\": \"Login successful\"\n}"
+				}
+			]
+		},
+		{
+			"name": "payment-segment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "26|vB5KhJdjHUg4TchVhYHTH3JMFyqRr479QlaxRrSJf85f4e39",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://gvnconsortium.com/api/client/payment-segment/",
+					"protocol": "https",
+					"host": [
+						"gvnconsortium",
+						"com"
+					],
+					"path": [
+						"api",
+						"client",
+						"payment-segment",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "payment-segment",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://gvnconsortium.com/api/client/payment-segment/",
+							"protocol": "https",
+							"host": [
+								"gvnconsortium",
+								"com"
+							],
+							"path": [
+								"api",
+								"client",
+								"payment-segment",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 01 Dec 2025 21:11:06 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1534"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.27"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "platform",
+							"value": "hostinger"
+						},
+						{
+							"key": "panel",
+							"value": "hpanel"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "upgrade-insecure-requests"
+						},
+						{
+							"key": "Server",
+							"value": "hcdn"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						},
+						{
+							"key": "x-hcdn-request-id",
+							"value": "fc0e05460847d844433fc2d8d3cb3052-kul-edge1"
+						},
+						{
+							"key": "x-hcdn-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "x-hcdn-upstream-rt",
+							"value": "0.440"
+						},
+						{
+							"key": "Accept-Ranges",
+							"value": "bytes"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"payments\": [\n        {\n            \"id\": 9,\n            \"client_id\": 3,\n            \"payment_segment_id\": 1,\n            \"payment_segment\": \"1st Payment\",\n            \"amount\": null,\n            \"image\": null,\n            \"is_approved\": null,\n            \"status\": null,\n            \"slug\": \"md-monjurul-islam-1764271400vmEabNosTUWo3ywOJB5C\",\n            \"created_at\": \"2025-11-27T19:23:20.000000Z\",\n            \"updated_at\": \"2025-11-27T19:23:20.000000Z\",\n            \"segment\": {\n                \"id\": 1,\n                \"country_id\": 1,\n                \"name\": \"1st Payment\",\n                \"is_active\": 1,\n                \"created_at\": \"2025-11-26T02:27:33.000000Z\",\n                \"updated_at\": \"2025-11-26T02:27:33.000000Z\"\n            },\n            \"statuses\": [\n                {\n                    \"id\": 77,\n                    \"payment_id\": 9,\n                    \"payment_segment_id\": 1,\n                    \"segment_status_id\": 5,\n                    \"segment_status\": \"File Opening\",\n                    \"is_completed\": 0,\n                    \"created_at\": \"2025-11-27T19:23:20.000000Z\",\n                    \"updated_at\": \"2025-11-27T19:23:20.000000Z\"\n                },\n                {\n                    \"id\": 78,\n                    \"payment_id\": 9,\n                    \"payment_segment_id\": 1,\n                    \"segment_status_id\": 6,\n                    \"segment_status\": \"Documentation Complete\",\n                    \"is_completed\": 0,\n                    \"created_at\": \"2025-11-27T19:23:20.000000Z\",\n                    \"updated_at\": \"2025-11-27T19:23:20.000000Z\"\n                },\n                {\n                    \"id\": 79,\n                    \"payment_id\": 9,\n                    \"payment_segment_id\": 1,\n                    \"segment_status_id\": 7,\n                    \"segment_status\": \"File send to Serbia\",\n                    \"is_completed\": 0,\n                    \"created_at\": \"2025-11-27T19:23:20.000000Z\",\n                    \"updated_at\": \"2025-11-27T19:23:20.000000Z\"\n                },\n                {\n                    \"id\": 80,\n                    \"payment_id\": 9,\n                    \"payment_segment_id\": 1,\n                    \"segment_status_id\": 8,\n                    \"segment_status\": \"File received by the company\",\n                    \"is_completed\": 0,\n                    \"created_at\": \"2025-11-27T19:23:20.000000Z\",\n                    \"updated_at\": \"2025-11-27T19:23:20.000000Z\"\n                }\n            ]\n        },\n        {\n            \"id\": 10,\n            \"client_id\": 3,\n            \"payment_segment_id\": 2,\n            \"payment_segment\": \"2nd Payment\",\n            \"amount\": \"200000.00\",\n            \"image\": \"upload/payment/payment-1764271422-170394301.jpg\",\n            \"is_approved\": null,\n            \"status\": \"1\",\n            \"slug\": \"md-monjurul-islam-17642714009DeROUEJDivI5DgCQcdf\",\n            \"created_at\": \"2025-11-27T19:23:20.000000Z\",\n            \"updated_at\": \"2025-11-27T19:23:42.000000Z\",\n            \"segment\": {\n                \"id\": 2,\n                \"country_id\": 1,\n                \"name\": \"2nd Payment\",\n                \"is_active\": 1,\n                \"created_at\": \"2025-11-26T02:27:39.000000Z\",\n                \"updated_at\": \"2025-11-26T02:27:39.000000Z\"\n            },\n            \"statuses\": [\n                {\n                    \"id\": 81,\n                    \"payment_id\": 10,\n                    \"payment_segment_id\": 2,\n                    \"segment_status_id\": 9,\n                    \"segment_status\": \"Apply for the Ministry recommendation\",\n                    \"is_completed\": 0,\n                    \"created_at\": \"2025-11-27T19:23:20.000000Z\",\n                    \"updated_at\": \"2025-11-27T19:23:20.000000Z\"\n                },\n                {\n                    \"id\": 82,\n                    \"payment_id\": 10,\n                    \"payment_segment_id\": 2,\n                    \"segment_status_id\": 10,\n                    \"segment_status\": \"Ministry recommendation completion.\",\n                    \"is_completed\": 1,\n                    \"created_at\": \"2025-11-27T19:23:20.000000Z\",\n                    \"updated_at\": \"2025-11-27T19:23:48.000000Z\"\n                },\n                {\n                    \"id\": 83,\n                    \"payment_id\": 10,\n                    \"payment_segment_id\": 2,\n                    \"segment_status_id\": 11,\n                    \"segment_status\": \"Apply for the visa approval\",\n                    \"is_completed\": 0,\n                    \"created_at\": \"2025-11-27T19:23:20.000000Z\",\n                    \"updated_at\": \"2025-11-27T19:23:20.000000Z\"\n                },\n                {\n                    \"id\": 84,\n                    \"payment_id\": 10,\n                    \"payment_segment_id\": 2,\n                    \"segment_status_id\": 12,\n                    \"segment_status\": \"Visa approved by Embassy\",\n                    \"is_completed\": 0,\n                    \"created_at\": \"2025-11-27T19:23:20.000000Z\",\n                    \"updated_at\": \"2025-11-27T19:23:20.000000Z\"\n                }\n            ]\n        },\n        {\n            \"id\": 11,\n            \"client_id\": 3,\n            \"payment_segment_id\": 3,\n            \"payment_segment\": \"3rd Payment\",\n            \"amount\": null,\n            \"image\": null,\n            \"is_approved\": null,\n            \"status\": null,\n            \"slug\": \"md-monjurul-islam-1764271400YEYaLu3MJ9zmrAZTDbsa\",\n            \"created_at\": \"2025-11-27T19:23:20.000000Z\",\n            \"updated_at\": \"2025-11-27T19:23:20.000000Z\",\n            \"segment\": {\n                \"id\": 3,\n                \"country_id\": 1,\n                \"name\": \"3rd Payment\",\n                \"is_active\": 1,\n                \"created_at\": \"2025-11-26T02:27:59.000000Z\",\n                \"updated_at\": \"2025-11-26T02:27:59.000000Z\"\n            },\n            \"statuses\": [\n                {\n                    \"id\": 85,\n                    \"payment_id\": 11,\n                    \"payment_segment_id\": 3,\n                    \"segment_status_id\": 13,\n                    \"segment_status\": \"Take foreign Ministry approval\",\n                    \"is_completed\": 0,\n                    \"created_at\": \"2025-11-27T19:23:20.000000Z\",\n                    \"updated_at\": \"2025-11-27T19:23:20.000000Z\"\n                },\n                {\n                    \"id\": 86,\n                    \"payment_id\": 11,\n                    \"payment_segment_id\": 3,\n                    \"segment_status_id\": 14,\n                    \"segment_status\": \"Foreign Ministry approval done\",\n                    \"is_completed\": 0,\n                    \"created_at\": \"2025-11-27T19:23:20.000000Z\",\n                    \"updated_at\": \"2025-11-27T19:23:20.000000Z\"\n                },\n                {\n                    \"id\": 87,\n                    \"payment_id\": 11,\n                    \"payment_segment_id\": 3,\n                    \"segment_status_id\": 15,\n                    \"segment_status\": \"Passport send to Serbians Embassy\",\n                    \"is_completed\": 0,\n                    \"created_at\": \"2025-11-27T19:23:20.000000Z\",\n                    \"updated_at\": \"2025-11-27T19:23:20.000000Z\"\n                },\n                {\n                    \"id\": 88,\n                    \"payment_id\": 11,\n                    \"payment_segment_id\": 3,\n                    \"segment_status_id\": 16,\n                    \"segment_status\": \"Passport in Transit\",\n                    \"is_completed\": 0,\n                    \"created_at\": \"2025-11-27T19:23:20.000000Z\",\n                    \"updated_at\": \"2025-11-27T19:23:20.000000Z\"\n                },\n                {\n                    \"id\": 89,\n                    \"payment_id\": 11,\n                    \"payment_segment_id\": 3,\n                    \"segment_status_id\": 17,\n                    \"segment_status\": \"Passport arrived at New Delhi office\",\n                    \"is_completed\": 0,\n                    \"created_at\": \"2025-11-27T19:23:20.000000Z\",\n                    \"updated_at\": \"2025-11-27T19:23:20.000000Z\"\n                },\n                {\n                    \"id\": 90,\n                    \"payment_id\": 11,\n                    \"payment_segment_id\": 3,\n                    \"segment_status_id\": 18,\n                    \"segment_status\": \"Documentation for stamping\",\n                    \"is_completed\": 0,\n                    \"created_at\": \"2025-11-27T19:23:20.000000Z\",\n                    \"updated_at\": \"2025-11-27T19:23:20.000000Z\"\n                },\n                {\n                    \"id\": 91,\n                    \"payment_id\": 11,\n                    \"payment_segment_id\": 3,\n                    \"segment_status_id\": 19,\n                    \"segment_status\": \"Passport submission to Embassy\",\n                    \"is_completed\": 0,\n                    \"created_at\": \"2025-11-27T19:23:20.000000Z\",\n                    \"updated_at\": \"2025-11-27T19:23:20.000000Z\"\n                },\n                {\n                    \"id\": 92,\n                    \"payment_id\": 11,\n                    \"payment_segment_id\": 3,\n                    \"segment_status_id\": 20,\n                    \"segment_status\": \"Passport received by Consulate\",\n                    \"is_completed\": 0,\n                    \"created_at\": \"2025-11-27T19:23:20.000000Z\",\n                    \"updated_at\": \"2025-11-27T19:23:20.000000Z\"\n                },\n                {\n                    \"id\": 93,\n                    \"payment_id\": 11,\n                    \"payment_segment_id\": 3,\n                    \"segment_status_id\": 21,\n                    \"segment_status\": \"BMET training\",\n                    \"is_completed\": 0,\n                    \"created_at\": \"2025-11-27T19:23:20.000000Z\",\n                    \"updated_at\": \"2025-11-27T19:23:20.000000Z\"\n                },\n                {\n                    \"id\": 94,\n                    \"payment_id\": 11,\n                    \"payment_segment_id\": 3,\n                    \"segment_status_id\": 22,\n                    \"segment_status\": \"BMET training certificate received\",\n                    \"is_completed\": 0,\n                    \"created_at\": \"2025-11-27T19:23:20.000000Z\",\n                    \"updated_at\": \"2025-11-27T19:23:20.000000Z\"\n                },\n                {\n                    \"id\": 95,\n                    \"payment_id\": 11,\n                    \"payment_segment_id\": 3,\n                    \"segment_status_id\": 23,\n                    \"segment_status\": \"BMET fingerprint done\",\n                    \"is_completed\": 0,\n                    \"created_at\": \"2025-11-27T19:23:20.000000Z\",\n                    \"updated_at\": \"2025-11-27T19:23:20.000000Z\"\n                },\n                {\n                    \"id\": 96,\n                    \"payment_id\": 11,\n                    \"payment_segment_id\": 3,\n                    \"segment_status_id\": 24,\n                    \"segment_status\": \"Waiting for visa stamping\",\n                    \"is_completed\": 0,\n                    \"created_at\": \"2025-11-27T19:23:20.000000Z\",\n                    \"updated_at\": \"2025-11-27T19:23:20.000000Z\"\n                },\n                {\n                    \"id\": 97,\n                    \"payment_id\": 11,\n                    \"payment_segment_id\": 3,\n                    \"segment_status_id\": 25,\n                    \"segment_status\": \"Prepared for delivery\",\n                    \"is_completed\": 0,\n                    \"created_at\": \"2025-11-27T19:23:20.000000Z\",\n                    \"updated_at\": \"2025-11-27T19:23:20.000000Z\"\n                },\n                {\n                    \"id\": 98,\n                    \"payment_id\": 11,\n                    \"payment_segment_id\": 3,\n                    \"segment_status_id\": 26,\n                    \"segment_status\": \"Delivery done\",\n                    \"is_completed\": 0,\n                    \"created_at\": \"2025-11-27T19:23:20.000000Z\",\n                    \"updated_at\": \"2025-11-27T19:23:20.000000Z\"\n                },\n                {\n                    \"id\": 99,\n                    \"payment_id\": 11,\n                    \"payment_segment_id\": 3,\n                    \"segment_status_id\": 27,\n                    \"segment_status\": \"Passport received by GVN (Delhi)\",\n                    \"is_completed\": 0,\n                    \"created_at\": \"2025-11-27T19:23:20.000000Z\",\n                    \"updated_at\": \"2025-11-27T19:23:20.000000Z\"\n                },\n                {\n                    \"id\": 100,\n                    \"payment_id\": 11,\n                    \"payment_segment_id\": 3,\n                    \"segment_status_id\": 28,\n                    \"segment_status\": \"Sent to GVN (Dhaka office)\",\n                    \"is_completed\": 0,\n                    \"created_at\": \"2025-11-27T19:23:20.000000Z\",\n                    \"updated_at\": \"2025-11-27T19:23:20.000000Z\"\n                },\n                {\n                    \"id\": 101,\n                    \"payment_id\": 11,\n                    \"payment_segment_id\": 3,\n                    \"segment_status_id\": 29,\n                    \"segment_status\": \"Passprot in transit\",\n                    \"is_completed\": 0,\n                    \"created_at\": \"2025-11-27T19:23:20.000000Z\",\n                    \"updated_at\": \"2025-11-27T19:23:20.000000Z\"\n                },\n                {\n                    \"id\": 102,\n                    \"payment_id\": 11,\n                    \"payment_segment_id\": 3,\n                    \"segment_status_id\": 30,\n                    \"segment_status\": \"Passport arrived at (Dhaka office)\",\n                    \"is_completed\": 0,\n                    \"created_at\": \"2025-11-27T19:23:20.000000Z\",\n                    \"updated_at\": \"2025-11-27T19:23:20.000000Z\"\n                },\n                {\n                    \"id\": 103,\n                    \"payment_id\": 11,\n                    \"payment_segment_id\": 3,\n                    \"segment_status_id\": 31,\n                    \"segment_status\": \"Security guarantee documentation\",\n                    \"is_completed\": 0,\n                    \"created_at\": \"2025-11-27T19:23:20.000000Z\",\n                    \"updated_at\": \"2025-11-27T19:23:20.000000Z\"\n                },\n                {\n                    \"id\": 104,\n                    \"payment_id\": 11,\n                    \"payment_segment_id\": 3,\n                    \"segment_status_id\": 32,\n                    \"segment_status\": \"Guarantee agreement & security instrument received\",\n                    \"is_completed\": 0,\n                    \"created_at\": \"2025-11-27T19:23:20.000000Z\",\n                    \"updated_at\": \"2025-11-27T19:23:20.000000Z\"\n                },\n                {\n                    \"id\": 105,\n                    \"payment_id\": 11,\n                    \"payment_segment_id\": 3,\n                    \"segment_status_id\": 33,\n                    \"segment_status\": \"Apply for BMET clearance\",\n                    \"is_completed\": 0,\n                    \"created_at\": \"2025-11-27T19:23:20.000000Z\",\n                    \"updated_at\": \"2025-11-27T19:23:20.000000Z\"\n                },\n                {\n                    \"id\": 106,\n                    \"payment_id\": 11,\n                    \"payment_segment_id\": 3,\n                    \"segment_status_id\": 34,\n                    \"segment_status\": \"BMET card received\",\n                    \"is_completed\": 0,\n                    \"created_at\": \"2025-11-27T19:23:20.000000Z\",\n                    \"updated_at\": \"2025-11-27T19:23:20.000000Z\"\n                }\n            ]\n        },\n        {\n            \"id\": 12,\n            \"client_id\": 3,\n            \"payment_segment_id\": 4,\n            \"payment_segment\": \"Final Payment\",\n            \"amount\": null,\n            \"image\": null,\n            \"is_approved\": null,\n            \"status\": null,\n            \"slug\": \"md-monjurul-islam-176427140088jcwOz8DqEJsKNSCJQC\",\n            \"created_at\": \"2025-11-27T19:23:20.000000Z\",\n            \"updated_at\": \"2025-11-27T19:23:20.000000Z\",\n            \"segment\": {\n                \"id\": 4,\n                \"country_id\": 1,\n                \"name\": \"Final Payment\",\n                \"is_active\": 1,\n                \"created_at\": \"2025-11-26T02:28:06.000000Z\",\n                \"updated_at\": \"2025-11-26T02:28:06.000000Z\"\n            },\n            \"statuses\": [\n                {\n                    \"id\": 107,\n                    \"payment_id\": 12,\n                    \"payment_segment_id\": 4,\n                    \"segment_status_id\": 35,\n                    \"segment_status\": \"Apply for accounts NOC\",\n                    \"is_completed\": 0,\n                    \"created_at\": \"2025-11-27T19:23:20.000000Z\",\n                    \"updated_at\": \"2025-11-27T19:23:20.000000Z\"\n                },\n                {\n                    \"id\": 108,\n                    \"payment_id\": 12,\n                    \"payment_segment_id\": 4,\n                    \"segment_status_id\": 36,\n                    \"segment_status\": \"Accounts verifying in process\",\n                    \"is_completed\": 0,\n                    \"created_at\": \"2025-11-27T19:23:20.000000Z\",\n                    \"updated_at\": \"2025-11-27T19:23:20.000000Z\"\n                },\n                {\n                    \"id\": 109,\n                    \"payment_id\": 12,\n                    \"payment_segment_id\": 4,\n                    \"segment_status_id\": 37,\n                    \"segment_status\": \"Accounts NOC collected\",\n                    \"is_completed\": 0,\n                    \"created_at\": \"2025-11-27T19:23:20.000000Z\",\n                    \"updated_at\": \"2025-11-27T19:23:20.000000Z\"\n                },\n                {\n                    \"id\": 110,\n                    \"payment_id\": 12,\n                    \"payment_segment_id\": 4,\n                    \"segment_status_id\": 38,\n                    \"segment_status\": \"Experience sharing & footage collection\",\n                    \"is_completed\": 0,\n                    \"created_at\": \"2025-11-27T19:23:20.000000Z\",\n                    \"updated_at\": \"2025-11-27T19:23:20.000000Z\"\n                },\n                {\n                    \"id\": 111,\n                    \"payment_id\": 12,\n                    \"payment_segment_id\": 4,\n                    \"segment_status_id\": 39,\n                    \"segment_status\": \"Apply for visa & full documents\",\n                    \"is_completed\": 0,\n                    \"created_at\": \"2025-11-27T19:23:20.000000Z\",\n                    \"updated_at\": \"2025-11-27T19:23:20.000000Z\"\n                },\n                {\n                    \"id\": 112,\n                    \"payment_id\": 12,\n                    \"payment_segment_id\": 4,\n                    \"segment_status_id\": 40,\n                    \"segment_status\": \"Documents delivery\",\n                    \"is_completed\": 0,\n                    \"created_at\": \"2025-11-27T19:23:20.000000Z\",\n                    \"updated_at\": \"2025-11-27T19:23:20.000000Z\"\n                },\n                {\n                    \"id\": 113,\n                    \"payment_id\": 12,\n                    \"payment_segment_id\": 4,\n                    \"segment_status_id\": 41,\n                    \"segment_status\": \"Flight Schedule\",\n                    \"is_completed\": 0,\n                    \"created_at\": \"2025-11-27T19:23:20.000000Z\",\n                    \"updated_at\": \"2025-11-27T19:23:20.000000Z\"\n                },\n                {\n                    \"id\": 114,\n                    \"payment_id\": 12,\n                    \"payment_segment_id\": 4,\n                    \"segment_status_id\": 42,\n                    \"segment_status\": \"Board from Dhaka airport\",\n                    \"is_completed\": 0,\n                    \"created_at\": \"2025-11-27T19:23:20.000000Z\",\n                    \"updated_at\": \"2025-11-27T19:23:20.000000Z\"\n                }\n            ]\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "payment ( https://gvnconsortium.com/api/client/payment-segment/payment/ )",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "26|vB5KhJdjHUg4TchVhYHTH3JMFyqRr479QlaxRrSJf85f4e39",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://gvnconsortium.com/api/client/payment-segment/payment/md-monjurul-islam-1764271400YEYaLu3MJ9zmrAZTDbsa",
+					"protocol": "https",
+					"host": [
+						"gvnconsortium",
+						"com"
+					],
+					"path": [
+						"api",
+						"client",
+						"payment-segment",
+						"payment",
+						"md-monjurul-islam-1764271400YEYaLu3MJ9zmrAZTDbsa"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "payment",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://gvnconsortium.com/api/client/payment-segment/payment/md-monjurul-islam-1764271400YEYaLu3MJ9zmrAZTDbsa",
+							"protocol": "https",
+							"host": [
+								"gvnconsortium",
+								"com"
+							],
+							"path": [
+								"api",
+								"client",
+								"payment-segment",
+								"payment",
+								"md-monjurul-islam-1764271400YEYaLu3MJ9zmrAZTDbsa"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 01 Dec 2025 21:12:27 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "216"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.27"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "platform",
+							"value": "hostinger"
+						},
+						{
+							"key": "panel",
+							"value": "hpanel"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "upgrade-insecure-requests"
+						},
+						{
+							"key": "Server",
+							"value": "hcdn"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						},
+						{
+							"key": "x-hcdn-request-id",
+							"value": "6e908ae9ace867f13f2176a6f73d5f47-kul-edge3"
+						},
+						{
+							"key": "x-hcdn-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "x-hcdn-upstream-rt",
+							"value": "0.334"
+						},
+						{
+							"key": "Accept-Ranges",
+							"value": "bytes"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"payments\": {\n        \"id\": 11,\n        \"client_id\": 3,\n        \"payment_segment_id\": 3,\n        \"payment_segment\": \"3rd Payment\",\n        \"amount\": null,\n        \"image\": null,\n        \"is_approved\": null,\n        \"status\": null,\n        \"slug\": \"md-monjurul-islam-1764271400YEYaLu3MJ9zmrAZTDbsa\",\n        \"created_at\": \"2025-11-27T19:23:20.000000Z\",\n        \"updated_at\": \"2025-11-27T19:23:20.000000Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Store payment ( https://gvnconsortium.com/api/client/payment-segment/payment/ )",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "26|vB5KhJdjHUg4TchVhYHTH3JMFyqRr479QlaxRrSJf85f4e39",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amount\":2025,\r\n    \"image\":\"upload/payment/payment-1764235753-463526388.jpg\",\r\n    \"status\": \"0\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gvnconsortium.com/api/client/payment-segment/payment/md-monjurul-islam-1764271400YEYaLu3MJ9zmrAZTDbsa",
+					"protocol": "https",
+					"host": [
+						"gvnconsortium",
+						"com"
+					],
+					"path": [
+						"api",
+						"client",
+						"payment-segment",
+						"payment",
+						"md-monjurul-islam-1764271400YEYaLu3MJ9zmrAZTDbsa"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Store payment",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\":2025,\r\n    \"image\":\"upload/payment/payment-1764235753-463526388.jpg\",\r\n    \"status\": \"0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://gvnconsortium.com/api/client/payment-segment/payment/md-monjurul-islam-1764271400YEYaLu3MJ9zmrAZTDbsa",
+							"protocol": "https",
+							"host": [
+								"gvnconsortium",
+								"com"
+							],
+							"path": [
+								"api",
+								"client",
+								"payment-segment",
+								"payment",
+								"md-monjurul-islam-1764271400YEYaLu3MJ9zmrAZTDbsa"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 01 Dec 2025 21:13:11 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "250"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.27"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "platform",
+							"value": "hostinger"
+						},
+						{
+							"key": "panel",
+							"value": "hpanel"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "upgrade-insecure-requests"
+						},
+						{
+							"key": "Server",
+							"value": "hcdn"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						},
+						{
+							"key": "x-hcdn-request-id",
+							"value": "a62f21fb73e6aee0814540bc28687dcc-kul-edge3"
+						},
+						{
+							"key": "x-hcdn-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "x-hcdn-upstream-rt",
+							"value": "0.306"
+						},
+						{
+							"key": "Accept-Ranges",
+							"value": "bytes"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"payment\": {\n        \"id\": 11,\n        \"client_id\": 3,\n        \"payment_segment_id\": 3,\n        \"payment_segment\": \"3rd Payment\",\n        \"amount\": 2025,\n        \"image\": \"\",\n        \"is_approved\": null,\n        \"status\": \"0\",\n        \"slug\": \"md-monjurul-islam-1764271400YEYaLu3MJ9zmrAZTDbsa\",\n        \"created_at\": \"2025-11-27T19:23:20.000000Z\",\n        \"updated_at\": \"2025-12-01T21:13:11.000000Z\"\n    },\n    \"message\": \"Payment Successful!\"\n}"
+				}
+			]
+		}
+	]
+}
