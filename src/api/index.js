@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const apiClient = axios.create({
-  baseURL: 'https://gvnconsortium.com/api/client',
+  baseURL: '/api/client',
   headers: {
     'Content-Type': 'application/json',
     'Accept': 'application/json'

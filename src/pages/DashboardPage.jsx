@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Typography, Box, CircularProgress, Alert } from '@mui/material';
 import { getPaymentSegments } from '../api/paymentService';
-import SerpentTimeline from '../components/dashboard/SerpentTimeline';
+import SnakeTimeline from '../components/dashboard/SnakeTimeline';
 import Header from '../components/Header.jsx';
 
 
@@ -44,7 +44,7 @@ const DashboardPage = () => {
         <Typography variant="h4" component="h1" gutterBottom>
           Your Dashboard
         </Typography>
-        <SerpentTimeline paymentSegments={paymentSegments} />
+        <SnakeTimeline paymentSegments={paymentSegments} />
       </Container>
     </>
   );
