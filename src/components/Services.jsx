@@ -84,57 +84,92 @@ const Services = () => {
         <Typography variant="h2" component="h2" align="center" gutterBottom color="white">
           Our Services
         </Typography>
-        <Swiper
-            effect={'coverflow'}
-            grabCursor={true}
-            centeredSlides={true}
-            slidesPerView={3}
-            coverflowEffect={{
-                rotate: 0,
-                stretch: 0,
-                depth: 100,
-                modifier: 2,
-                slideShadows: true,
-            }}
-            pagination={{ clickable: true }}
-            modules={[EffectCoverflow, Pagination, Autoplay]}
-            autoplay={{
-                delay: 3000,
-                disableOnInteraction: false,
-            }}
-            loop={true}
-            className="mySwiper"
-            onSlideChange={handleSlideChange}
-            style={{padding: '2rem 0'}}
-        >
-          {services.map((service, index) => (
-            <SwiperSlide key={index}>
-                <Paper 
-                    sx={{ 
-                        p: 4, 
-                        textAlign: 'center', 
-                        height: '350px',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        transition: 'transform 0.3s',
-                        '&:hover': {
-                            transform: 'translateY(-10px)',
-                        }
-                    }}
-                >
-                    <Box sx={{ mb: 2 }}>{service.icon}</Box>
-                    <Typography variant="h4" component="h3" gutterBottom sx={{ fontSize: '1.5rem' }}>
-                        {service.title}
-                    </Typography>
-                    <Typography variant="body1" color="text.secondary">
-                        {service.description}
-                    </Typography>
-                </Paper>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+        {/* Mobile Version - Card List */}
+        <Box sx={{ display: { xs: 'block', md: 'none' } }}>
+          <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+            {services.map((service, index) => (
+              <Paper
+                key={index}
+                sx={{
+                  p: 3,
+                  textAlign: 'center',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  transition: 'transform 0.3s, box-shadow 0.3s',
+                  '&:hover': {
+                    transform: 'translateY(-5px)',
+                    boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.2), 0 5px 10px -6px rgba(0, 0, 0, 0.1)',
+                  }
+                }}
+              >
+                <Box sx={{ mb: 1.5 }}>{service.icon}</Box>
+                <Typography variant="h5" component="h3" gutterBottom sx={{ fontSize: '1.2rem', fontWeight: 'bold' }}>
+                    {service.title}
+                </Typography>
+                <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.5 }}>
+                    {service.description}
+                </Typography>
+              </Paper>
+            ))}
+          </Box>
+        </Box>
+
+        {/* Desktop Version - Swiper */}
+        <Box sx={{ display: { xs: 'none', md: 'block' } }}>
+          <Swiper
+              effect={'coverflow'}
+              grabCursor={true}
+              centeredSlides={true}
+              slidesPerView={3}
+              coverflowEffect={{
+                  rotate: 0,
+                  stretch: 0,
+                  depth: 100,
+                  modifier: 2,
+                  slideShadows: true,
+              }}
+              pagination={{ clickable: true }}
+              modules={[EffectCoverflow, Pagination, Autoplay]}
+              autoplay={{
+                  delay: 3000,
+                  disableOnInteraction: false,
+              }}
+              loop={true}
+              className="mySwiper"
+              onSlideChange={handleSlideChange}
+              style={{padding: '2rem 0'}}
+          >
+            {services.map((service, index) => (
+              <SwiperSlide key={index}>
+                  <Paper
+                      sx={{
+                          p: 4,
+                          textAlign: 'center',
+                          height: '350px',
+                          display: 'flex',
+                          flexDirection: 'column',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          transition: 'transform 0.3s',
+                          '&:hover': {
+                              transform: 'translateY(-10px)',
+                          }
+                      }}
+                  >
+                      <Box sx={{ mb: 2 }}>{service.icon}</Box>
+                      <Typography variant="h4" component="h3" gutterBottom sx={{ fontSize: '1.5rem' }}>
+                          {service.title}
+                      </Typography>
+                      <Typography variant="body1" color="text.secondary">
+                          {service.description}
+                      </Typography>
+                  </Paper>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </Box>
       </Container>
     </Box>
   );

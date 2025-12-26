@@ -2,39 +2,119 @@ import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Box, CircularProgress, Typography } from '@mui/material';
 
-const Loading = ({ isLoading }) => (
-  <AnimatePresence>
-    {isLoading && (
-      <motion.div
-        className="fixed inset-0 flex items-center justify-center bg-black/90 backdrop-blur-md z-[9999] flex-col text-center p-8"
-        initial={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.5 }}
-      >
+const Loading = ({ isLoading }) => {
+  return (
+    <AnimatePresence mode="wait">
+      {isLoading && (
         <motion.div
-          animate={{ rotate: 360 }}
-          transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
-          className="mb-6"
-          style={{ width: 120, height: 120 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.4, ease: 'easeInOut' }}
+          style={{
+            position: 'fixed',
+            inset: 0,
+            zIndex: 9999,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            background: 'rgba(0, 0, 0, 0.85)',
+            backdropFilter: 'blur(12px)',
+          }}
         >
-          <CircularProgress size={120} thickness={2} sx={{ color: 'primary.main' }} />
-          <CircularProgress size={120} thickness={2} sx={{ color: 'secondary.main', position: 'absolute', animation: 'spin-slow' }} />
+          {/* Dual-ring spinner with counter rotation */}
+          <Box sx={{ position: 'relative', mb: 6 }}>
+            <CircularProgress
+              size={100}
+              thickness={3.5}
+              sx={{ color: 'primary.main' }}
+            />
+
+            <CircularProgress
+              size={100}
+              thickness={3.5}
+              sx={{
+                color: 'secondary.main',
+                position: 'absolute',
+                left: 0,
+                top: 0,
+                animation: 'spin-reverse 4s linear infinite',
+              }}
+            />
+
+            {/* GVN Logo in center */}
+            <Box
+              sx={{
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                width: 44,
+                height: 44,
+                bgcolor: 'background.paper',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontWeight: 'bold',
+                fontSize: '1.3rem',
+                color: 'primary.main',
+                boxShadow: '0 4px 20px rgba(0,0,0,0.4)',
+              }}
+            >
+              GVN
+            </Box>
+          </Box>
+
+          {/* Text */}
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            style={{ textAlign: 'center' }}
+          >
+            <Typography
+              variant="h4"
+              sx={{
+                fontWeight: 800,
+                background: 'linear-gradient(90deg, #667eea 0%, #764ba2 100%)',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                mb: 1,
+              }}
+            >
+              GVN Loading...
+            </Typography>
+
+            <Typography
+              variant="body1"
+              sx={{
+                color: 'rgba(255, 255, 255, 0.75)',
+                fontWeight: 400,
+                letterSpacing: '0.8px',
+              }}
+            >
+              Immersive experience initializing
+            </Typography>
+          </motion.div>
+
+          {/* CSS Animation for reverse spin */}
+          <style jsx global>{`
+            @keyframes spin-reverse {
+              from {
+                transform: rotate(0deg);
+              }
+              to {
+                transform: rotate(-360deg);
+              }
+            }
+          `}</style>
         </motion.div>
-        <motion.div
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ delay: 0.5, duration: 0.5 }}
-        >
-          <Typography variant="h4" className="mb-2">
-            GVN Loading...
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Immersive experience initializing
-          </Typography>
-        </motion.div>
-      </motion.div>
-    )}
-  </AnimatePresence>
-);
+      )}
+    </AnimatePresence>
+  );
+};
 
 export default Loading;

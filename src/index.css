@@ -14,7 +14,58 @@ html {
 
 body {
   overflow-x: hidden;
-  background-color: #f0f2f5; /* Light gray for a trustable look */
+  background: #f0f2f5; /* default light mode background */
+  min-height: 100vh;
+  color: #000000; /* default text color for light mode */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body[data-theme="dark"] {
+  background: linear-gradient(135deg, #0a0f23 0%, #0f1937 100%);
+  color: #ffffff;
+}
+
+/* Professional gradient backgrounds */
+.bg-gradient-primary {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+}
+
+.bg-gradient-secondary {
+  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+}
+
+.bg-gradient-tertiary {
+  background: linear-gradient(135deg, #93c5fd 0%, #60a5fa 100%);
+}
+
+/* Professional card styling */
+.card-elevated {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.card-elevated:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -6px rgba(0, 0, 0, 0.05);
+}
+
+/* Professional button styling */
+.btn-gradient {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  text-transform: none;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3);
 }
 
 /* Keyframes for animated gradient background */
@@ -27,5 +78,39 @@ body {
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+
+/* Professional hover and focus transitions */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+/* Professional focus rings */
+.focus-ring {
+  transition: outline 0.2s ease, outline-offset 0.2s ease;
+}
+
+.focus-ring:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Smooth pulse animation */
+.pulse-smooth {
+  animation: pulse-smooth 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-smooth {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
   }
 }
