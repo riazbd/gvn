@@ -11,7 +11,7 @@ const SetPasswordStep = ({ onSetPasswordSubmit, username, password, setPassword,
         This will be used to access your account.
       </Typography>
       <TextField
-        label="Username/Email"
+        label="Phone/Email"
         variant="outlined"
         fullWidth
         margin="normal"

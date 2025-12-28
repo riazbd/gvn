@@ -11,7 +11,7 @@ const PasswordStep = ({ onPasswordSubmit, username, password, setPassword, loadi
         Please enter your password to continue.
       </Typography>
       <TextField
-        label="Username/Email"
+        label="Phone/Email"
         variant="outlined"
         fullWidth
         margin="normal"
