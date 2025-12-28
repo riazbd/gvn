@@ -8,10 +8,11 @@ const UsernameStep = ({ onUsernameSubmit, username, setUsername, loading, inputA
         Welcome!
       </Typography>
       <Typography variant="body1" color="text.secondary" gutterBottom>
-        Enter your username to log in or get started.
+        Enter your username or email to log in or get started.
       </Typography>
       <TextField
-        label="Username"
+        label="Username/Email"
+        placeholder="Username/Email"
         variant="outlined"
         fullWidth
         margin="normal"

@@ -8,8 +8,17 @@ const SetPasswordStep = ({ onSetPasswordSubmit, username, password, setPassword,
         Create Your Password
       </Typography>
       <Typography variant="body1" color="text.secondary" gutterBottom>
-        This will be used to access your account, {username}.
+        This will be used to access your account.
       </Typography>
+      <TextField
+        label="Username/Email"
+        variant="outlined"
+        fullWidth
+        margin="normal"
+        value={username}
+        disabled
+        sx={textFieldSx}
+      />
       <TextField
         label="Password"
         type="password"

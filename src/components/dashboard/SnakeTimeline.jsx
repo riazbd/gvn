@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { Box, Paper, Typography, Tooltip, useMediaQuery, useTheme } from '@mui/material';
 import { keyframes } from '@emotion/react';
-import { CheckCircle, RadioButtonUnchecked, HourglassEmpty, Payment, Done, AccountBalanceWallet, Cancel } from '@mui/icons-material';
+import { Payment, Done, AccountBalanceWallet, Cancel } from '@mui/icons-material';
 import PaymentUpdateModal from './PaymentUpdateModal';
 import PaymentDetailModal from './PaymentDetailModal';
 
@@ -24,6 +24,7 @@ const SnakeTimeline = ({ paymentSegments }) => {
     // We'll place each payment dot at the start of its segment's status sequence
     const timelineElements = useMemo(() => {
         const elements = [];
+        let globalStatusCounter = 0;
         
         paymentSegments.forEach((segment, segmentIndex) => {
             // Add a payment segment dot for this segment
@@ -43,6 +44,7 @@ const SnakeTimeline = ({ paymentSegments }) => {
             
             // Add all statuses for this segment
             segment.statuses.forEach((status, statusIndex) => {
+                globalStatusCounter++;
                 elements.push({
                     type: 'status',
                     ...status,
@@ -50,7 +52,8 @@ const SnakeTimeline = ({ paymentSegments }) => {
                     parentSegmentId: segment.payment_segment_id,
                     parentSegment: segment,
                     segmentIndex,
-                    statusIndex
+                    statusIndex,
+                    globalStepNumber: globalStatusCounter
                 });
             });
         });
@@ -164,55 +167,75 @@ const SnakeTimeline = ({ paymentSegments }) => {
     const getStatusIcon = (status, index) => {
         if (status.type !== 'status') return null;
         
-        const iconStyle = {
-            fontSize: 28, // Slightly smaller than payment dots
-            backgroundColor: 'white',
+        const isActive = index === overallActiveIndex;
+        const number = status.globalStepNumber;
+        
+        const baseStyle = {
+            width: 28,
+            height: 28,
             borderRadius: '50%',
             border: '2.5px solid',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontWeight: 'bold',
+            fontSize: '14px',
             zIndex: 1, // Behind payment dots
             cursor: 'default', // Status dots don't have click functionality
+            backgroundColor: 'white',
         };
 
         if (status.is_completed) {
-            return <CheckCircle
-                sx={{
-                    ...iconStyle,
-                    color: theme.palette.success.main,
-                    borderColor: theme.palette.success.main,
-                    boxShadow: `0 2px 4px ${theme.palette.mode === 'dark'
-                      ? 'rgba(34, 197, 94, 0.2)'
-                      : 'rgba(34, 197, 94, 0.15)'}`,
-                }}
-            />;
+            return (
+                <Box
+                    sx={{
+                        ...baseStyle,
+                        color: 'white',
+                        backgroundColor: theme.palette.success.main,
+                        borderColor: theme.palette.success.main,
+                        boxShadow: `0 2px 4px ${theme.palette.mode === 'dark'
+                          ? 'rgba(34, 197, 94, 0.2)'
+                          : 'rgba(34, 197, 94, 0.15)'}`,
+                    }}
+                >
+                    {number}
+                </Box>
+            );
         }
 
         // Check if this status belongs to the segment that currently has the active status
-        const isActive = index === overallActiveIndex;
-
         if (isActive) {
-            return <HourglassEmpty
-                sx={{
-                    ...iconStyle,
-                    color: theme.palette.primary.main,
-                    borderColor: theme.palette.primary.main,
-                    animation: `${pulse} 2s infinite ease-in-out`,
-                    boxShadow: `0 4px 12px ${theme.palette.mode === 'dark'
-                      ? 'rgba(59, 130, 246, 0.3)'
-                      : 'rgba(59, 130, 246, 0.15)'}`,
-                }}
-            />;
+            return (
+                <Box
+                    sx={{
+                        ...baseStyle,
+                        color: theme.palette.primary.main,
+                        borderColor: theme.palette.primary.main,
+                        animation: `${pulse} 2s infinite ease-in-out`,
+                        boxShadow: `0 4px 12px ${theme.palette.mode === 'dark'
+                          ? 'rgba(59, 130, 246, 0.3)'
+                          : 'rgba(59, 130, 246, 0.15)'}`,
+                    }}
+                >
+                    {number}
+                </Box>
+            );
         }
 
-        return <RadioButtonUnchecked
-            sx={{
-                ...iconStyle,
-                color: theme.palette.grey[500],
-                borderColor: theme.palette.grey[400],
-                boxShadow: `0 1px 3px ${theme.palette.mode === 'dark'
-                  ? 'rgba(0, 0, 0, 0.1)'
-                  : 'rgba(0, 0, 0, 0.05)'}`,
-            }}
-        />;
+        return (
+            <Box
+                sx={{
+                    ...baseStyle,
+                    color: theme.palette.grey[500],
+                    borderColor: theme.palette.grey[400],
+                    boxShadow: `0 1px 3px ${theme.palette.mode === 'dark'
+                      ? 'rgba(0, 0, 0, 0.1)'
+                      : 'rgba(0, 0, 0, 0.05)'}`,
+                }}
+            >
+                {number}
+            </Box>
+        );
     };
 
     // Layout configuration
